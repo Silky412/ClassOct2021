@@ -1,16 +1,17 @@
 import { useState } from "react";
 
 function Main(){
-    const [email, setEmail] = useState('')
+    const [count, setCount] = useState(0)
     const [password, setPassword] = useState('')
+    const handleClick = ()=>{
+        setCount(count+1)
+    }
+    const notice = 'use state when chnaging value dynamically'
     return(
         <div>
-            <span>Email</span><br/>
-            <input type='text'onChange={(e)=>{setEmail(e.target.value)}}/><br/>
-            <span>password</span><br/>
-            <input type='password'onChange={(e)=>{setPassword(e.target.value)}}/>
-            <h4>Email-id:- {email}</h4>
-            <h4>password:- {password}</h4>
+            <h1>{notice}</h1>
+            <h3>{count}</h3>
+            <button onClick={()=>{handleClick()}}>click me</button>
         </div>
     )
 }
