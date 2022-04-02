@@ -4,15 +4,20 @@ import abc ,{value as val} from '../commenFunction'
 export default function LifeCycleComponent(){
     const [pvalue,setPvalue] = useState(0)
     const [nvalue,setNvalue] = useState(0)
-    useEffect(Confirm,[])    
+    const [state1, setState1] = useState(0)
+
+
+    useEffect(Confirm,[pvalue,nvalue])    
 
     function Confirm (){
         window.confirm('hello')
         console.log('inside useEffect')
-    }
+    }     
+
     //useEffect(callback function, optional(array))
-    //useEffect(callback function, [])   =>  componentDidMount
+    //useEffect(callback function, [])   =>  componentDidMount  phase it comes up only once when component loaded
     //useEffect(callbackback) ==> when ever there is a change in (anystate)compoent function will run
+    // useEffect(callback function, [state])  ==> when ever a change in this particular state the callback function
     return(
         <div style={{marginTop:'300px'}}>
             <h4>value updated:- {pvalue}</h4>
