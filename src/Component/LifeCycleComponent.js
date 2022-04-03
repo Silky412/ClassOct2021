@@ -7,7 +7,7 @@ export default function LifeCycleComponent(){
     const [state1, setState1] = useState(0)
 
 
-    useEffect(Confirm,[pvalue,nvalue])    
+    useEffect(Confirm,[pvalue,nvalue,state1])    
 
     function Confirm (){
         window.confirm('hello')

@@ -1,13 +1,13 @@
 import React, { Children } from 'react'
 import BooksImage from '../Assets/Images/books.jpg'
 function Card(props){
+    console.log(props)
     return(
-        <div style={{width:'30%', height:'100px',margin:'10px'}}>
+        <div style={{width:'20%', height:'100px',margin:'10px'}}>
             <span><img src={BooksImage}/></span>
-            <h2>{props.subject}</h2>
+            <h2>{props.title}</h2>
+            <h4>{props.id}</h4>
             <p>{props.description}</p>
-            {props.children}
-            <input type='text' onChange={(e)=>{props.changeName(e.target.value)}}/>
         </div>
     )
 }
