@@ -11,7 +11,7 @@ function Main(){
     return(
         <div>
             <h1>{notice}</h1>
-            <h3 id='divNumberHolder'>{a}</h3>
+            <h3 id='divNumberHolder'>{count}</h3>
             <button onClick={()=>{handleClick()}}>click me</button>
         </div>
     )

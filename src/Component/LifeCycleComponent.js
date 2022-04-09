@@ -4,15 +4,7 @@ import abc ,{value as val} from '../commenFunction'
 export default function LifeCycleComponent(){
     const [pvalue,setPvalue] = useState(0)
     const [nvalue,setNvalue] = useState(0)
-    const [state1, setState1] = useState(0)
-
-
-    useEffect(Confirm,[pvalue,nvalue,state1])    
-
-    function Confirm (){
-        window.confirm('hello')
-        console.log('inside useEffect')
-    }     
+    const [state1, setState1] = useState(0)    
 
     //useEffect(callback function, optional(array))
     //useEffect(callback function, [])   =>  componentDidMount  phase it comes up only once when component loaded
