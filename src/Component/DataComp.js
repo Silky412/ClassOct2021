@@ -1,8 +1,10 @@
 import React,{useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import Card from './Card'
 import axios from 'axios'
 
 function DataComp() {
+    const history = useHistory()
     const [data, setData] = useState([])
     let data2 
     // one way to handle promise and fetch data
@@ -16,7 +18,6 @@ function DataComp() {
         const result = await axios.get('https://jsonplaceholder.typicode.com/comments')
         setData(result.data)
         data2=result.data
-        console.log('result part',data2)
       }
       catch(err){
         console.log('inside catch', err)
@@ -30,12 +31,11 @@ function DataComp() {
             <button onClick={callData2}>call data</button>
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', height: '100vh', width: '100vw', overflow: 'auto' }}>
 
-                {data &&
-                    data.map((element, index) => {
+                {data?.map((element, index) => {
                         return (
-                            <React.Fragment key={element.id}>
+                            <span key={element.id} onClick={()=>{history.push(`blog/${element.id}/${element.postId}`)}}>
                                 {element.id < 10 && <Card title={element.name} description={element.body} id={element.id} />}
-                            </React.Fragment>
+                            </span>
                         )
                     })
                 }

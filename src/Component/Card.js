@@ -6,7 +6,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 function DemoCard(props) {
-    console.log(props)
     return (
         <Card sx={{ maxWidth: '25%' }} style={{ margin: '1%' }}>
             <CardActionArea>

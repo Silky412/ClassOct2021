@@ -84,6 +84,9 @@ const Navbar = () => {
             <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{history.push('/snippet')}}>
               Snippet
             </Button>
+            <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{history.push('/data')}}>
+              Data
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

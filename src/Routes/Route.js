@@ -4,6 +4,8 @@ import LifeCycleComponent from '../Component/LifeCycleComponent'
 import DataComp from '../Component/DataComp'
 import Main from '../Component/Main'
 import Snippet from '../Component/Snippet'
+import Blog from '../Component/Blog'
+import Error404 from '../Component/Error404'
 
 function Routess(){
     return (
@@ -12,6 +14,8 @@ function Routess(){
             <Route path='/main' component={Main}/>
             <Route path='/data' component={DataComp}/>
             <Route path='/lc' component={LifeCycleComponent}/>
+            <Route path='/blog/:id/:post' component={Blog}/>
+            <Route path='/*' component={Error404}/>
         </Switch>
     )
 }
