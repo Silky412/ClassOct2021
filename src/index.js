@@ -5,11 +5,14 @@ import App from './App';
 import Main from './Component/Main'
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
+import FlightContext from './Contexts/FlightContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <FlightContext>
+        <App />
+      </FlightContext>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,8 +1,12 @@
 import React from 'react'
+import Form from './Form'
 
 function Snippet() {
   return (
-    <div>Snippet</div>
+    <div>
+      <Form/>
+    </div>
+
   )
 }
 

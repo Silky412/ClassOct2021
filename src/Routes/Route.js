@@ -11,10 +11,10 @@ function Routess(){
     return (
         <Switch>
             <Route path='/snippet' component={Snippet}/>
-            <Route path='/main' component={Main}/>
+            <Route path='/main/:name' component={Main}/>
             <Route path='/data' component={DataComp}/>
             <Route path='/lc' component={LifeCycleComponent}/>
-            <Route path='/blog/:id/:post' component={Blog}/>
+            <Route path='/blog/:id' component={Blog}/>
             <Route path='/*' component={Error404}/>
         </Switch>
     )

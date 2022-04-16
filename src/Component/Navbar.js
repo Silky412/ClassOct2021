@@ -78,7 +78,7 @@ const Navbar = () => {
             <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{history.push('/lc')}}>
               LifeCycle
             </Button>
-            <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{history.push('/main')}}>
+            <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{history.push('/main/ ')}}>
               Main
             </Button>
             <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{history.push('/snippet')}}>

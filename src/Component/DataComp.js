@@ -33,7 +33,7 @@ function DataComp() {
 
                 {data?.map((element, index) => {
                         return (
-                            <span key={element.id} onClick={()=>{history.push(`blog/${element.id}/${element.postId}`)}}>
+                            <span key={element.id} onClick={()=>{history.push(`blog/${element.id}`)}}>
                                 {element.id < 10 && <Card title={element.name} description={element.body} id={element.id} />}
                             </span>
                         )

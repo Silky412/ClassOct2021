@@ -1,7 +1,10 @@
-import { useState } from "react";
-
+import { useState, useContext } from "react";
+import {useParams} from 'react-router-dom'
+import {Flight} from '../Contexts/FlightContext'
 function Main(){
     const [count, setCount] = useState(0)
+    const {name} = useParams()
+    const {name:contextName} = useContext(Flight)
     let a = 0
     const [password, setPassword] = useState('')
     const handleClick = ()=>{
@@ -11,6 +14,8 @@ function Main(){
     return(
         <div>
             <h1>{notice}</h1>
+            <h1>{name}</h1>
+            <h1>{contextName}</h1>
             <h3 id='divNumberHolder'>{count}</h3>
             <button onClick={()=>{handleClick()}}>click me</button>
         </div>
