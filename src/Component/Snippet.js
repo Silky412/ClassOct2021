@@ -1,10 +1,13 @@
 import React from 'react'
 import Form from './Form'
+import {useSelector} from 'react-redux'
 
 function Snippet() {
+  const state = useSelector((a)=> a)
+
   return (
     <div>
-      <Form/>
+      {state.name}
     </div>
 
   )

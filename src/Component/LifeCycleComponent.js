@@ -2,14 +2,18 @@ import { useState, useEffect, useRef, useContext } from "react"
 import abc ,{value as val} from '../commenFunction'
 import {Flight} from '../Contexts/FlightContext'
 import {useHistory} from 'react-router-dom'
+import {shareName, ShareSurName, shareFullName} from '../Redux/Action'
+import { useDispatch } from "react-redux"
 
 export default function LifeCycleComponent(props){
     const history = useHistory()
-    const {name,updateName} = useContext(Flight)
+    const dispatch = useDispatch()
+    // const {name,updateName} = useContext(Flight)
     const [pvalue,setPvalue] = useState(0)
     const [nvalue,setNvalue] = useState(0)
     const [state1, setState1] = useState(0)   
     const [inputValue, setInputValue] = useState('') 
+    const [sName,setSName] = useState('')
     const InputRef = useRef(null)
     const handleClick = ()=>{
         setPvalue(pvalue+1)
@@ -31,7 +35,12 @@ export default function LifeCycleComponent(props){
         <div style={{marginTop:'300px'}} onChange={handleChange} id='h4LifeCycle' ref={InputRef}>
             <input type='text' value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}/>
             <br/>
-            <button onClick={()=>{updateName(inputValue);history.push('/main/abc')}} >share name</button>
+            {/* <button onClick={()=>{dispatch(shareName(inputValue))}} >share name</button> */}
+            <br/>
+            <input type='text' value={sName} onChange={(e)=>{setSName(e.target.value)}}/>
+            <br/>
+            <button onClick={()=>{dispatch(shareFullName({fName:inputValue,sName:sName}))}} >share surname</button>
+            <br/>
             <h4>value updated:- {pvalue}</h4>
             <button onClick={handleClick}>click me</button>
             <h4>value updated:- {nvalue}</h4>

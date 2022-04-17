@@ -7,19 +7,20 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios'
 import Navbar from './Component/Navbar'
 import Routess from './Routes/Route';
-import FlightContext from './Contexts/FlightContext';
-import { Flight } from './Contexts/FlightContext'
-
+// import FlightContext from './Contexts/FlightContext';
+// import { Flight } from './Contexts/FlightContext'
+import {Provider} from 'react-redux'
+import {Store} from './Redux/Store'
 function App() {
-  const { name } = useContext(Flight)
+  // const { name } = useContext(Flight)
 
   return (
     <>
-      {/* <FlightContext> */}
+      <Provider store={Store}>
         <Navbar />
         <Routess />
-        {name}
-      {/* </FlightContext> */}
+        {/* {name} */}
+      </Provider>
       
     </>
   );
